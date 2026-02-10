@@ -1,0 +1,9 @@
+Tell me a joke
+
+---
+
+Update the contributing guide to remove the claude code agent docs
+
+---
+
+commit this
