@@ -167,45 +167,7 @@ Integration tests use the `//go:build integration` build tag and are located in 
 
 ## Creating an Agent
 
-
-Entire supports two ways to create agents:
-
-### 1. Claude Code Agent Personas (Markdown)
-
-These are markdown files that define specialized behaviors for Claude Code (e.g., developer, reviewer, etc.).
-
-- **Location:** `.claude/agents/`
-- **Structure:**
-   ```markdown
-   ---
-   name: my-agent
-   description: What this agent does
-   model: opus
-   color: blue
-   ---
-
-   # Agent Name
-   You are a **[Role]** with expertise in [domain].
-
-   ## Core Principles
-   - Principle 1
-   - Principle 2
-
-   ## Process
-   1. Step 1
-   2. Step 2
-
-   ## Output Format
-   How to structure responses...
-   ```
-- **To invoke:** Create a matching command in `.claude/commands/` that spawns the agent via the Task tool.
-- **Examples:**
-   - `.claude/agents/dev.md` - TDD Developer
-   - `.claude/agents/reviewer.md` - Code Reviewer
-
-### 2. Coding Agent Integrations (Go)
-
-These are Go implementations that integrate Entire with different AI coding tools (Claude, Cursor, Aider, etc.) using the Agent abstraction layer.
+Coding agent integrations are Go implementations that integrate Entire with different AI coding tools (Claude, Cursor, Aider, etc.) using the Agent abstraction layer.
 
 - **Location:** `cmd/entire/cli/agent/`
 - **Steps:**
@@ -214,13 +176,6 @@ These are Go implementations that integrate Entire with different AI coding tool
    3. Add setup and hook configuration as needed
    4. Ensure session and checkpoint tracking is handled per the abstraction
 - **Reference:** See [CLAUDE.md](CLAUDE.md) for architecture and code examples.
-
----
-
-**Which should I use?**
-
-- Use a persona markdown agent if you want to create a new role or workflow for Claude Code.
-- Use a coding agent integration if you want to add support for a new AI coding tool or extend agent capabilities in the CLI.
 
 ---
 
